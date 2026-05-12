@@ -1047,6 +1047,14 @@ Create `~/.agentmemory/.env`:
 # GEMINI_API_KEY=...
 # OPENROUTER_API_KEY=...
 # MINIMAX_API_KEY=...
+# OPENAI_API_KEY=***
+# OPENAI_BASE_URL=https://api.openai.com   # Optional: override for Azure / vLLM / LM Studio / proxies
+# OPENAI_MODEL=gpt-4o-mini                 # Optional: default model
+# OPENAI_REASONING_EFFORT=none             # Optional: "low" | "medium" | "high" | "none"
+#                                          # Set to "none" for thinking models (e.g. Ollama Cloud)
+#                                          # that return reasoning but no content.
+# OPENAI_API_KEY_FOR_LLM=false             # Optional: set to false to skip OpenAI auto-detection
+#                                          # for LLM (useful if you only want OpenAI for embeddings)
 # Opt-in Claude-subscription fallback (spawns @anthropic-ai/claude-agent-sdk);
 # leave OFF unless you understand the Stop-hook recursion risk (#149 follow-up):
 # AGENTMEMORY_ALLOW_AGENT_SDK=true
