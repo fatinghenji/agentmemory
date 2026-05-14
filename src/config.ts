@@ -167,7 +167,8 @@ export function detectLlmProviderKind(): "llm" | "noop" {
     hasRealValue(env["GOOGLE_API_KEY"]) ||
     hasRealValue(env["OPENROUTER_API_KEY"]) ||
     hasRealValue(env["MINIMAX_API_KEY"]) ||
-    hasRealValue(env["OPENAI_API_KEY"])
+    (hasRealValue(env["OPENAI_API_KEY"]) &&
+      env["OPENAI_API_KEY_FOR_LLM"] !== "false")
   ) {
     return "llm";
   }

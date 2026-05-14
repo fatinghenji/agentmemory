@@ -1051,8 +1051,12 @@ Create `~/.agentmemory/.env`:
 # OPENAI_BASE_URL=https://api.openai.com   # Optional: override for Azure / vLLM / LM Studio / proxies
 # OPENAI_MODEL=gpt-4o-mini                 # Optional: default model
 # OPENAI_REASONING_EFFORT=none             # Optional: "low" | "medium" | "high" | "none"
-#                                          # Set to "none" for thinking models (e.g. Ollama Cloud)
-#                                          # that return reasoning but no content.
+#                                          # Honored only by OpenAI's reasoning models (o1, o3,
+#                                          # gpt-*-reasoning) and providers that mirror that
+#                                          # schema (Ollama Cloud thinking models). Standard
+#                                          # chat models reject this field with 400. Set to
+#                                          # "none" for thinking models that return reasoning
+#                                          # but no content.
 # OPENAI_API_KEY_FOR_LLM=false             # Optional: set to false to skip OpenAI auto-detection
 #                                          # for LLM (useful if you only want OpenAI for embeddings)
 # Opt-in Claude-subscription fallback (spawns @anthropic-ai/claude-agent-sdk);
